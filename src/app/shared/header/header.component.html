@@ -8,38 +8,38 @@
       </div>
       <ul class="menu">
         <li class="menu__item">
-          <a class="menu__link" href="#">
+          <a class="menu__link" (click)="scrollTo('lets')">
             About me
           </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#">
+          <a class="menu__link" (click)="scrollTo('about')">
             Relationships
           </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#">
+          <a class="menu__link" (click)="scrollTo('general')">
             Requirements
           </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#">
+          <a class="menu__link" (click)="scrollTo('users')">
             Users
           </a>
         </li>
         <li class="menu__item">
-          <a class="menu__link">
+          <a class="menu__link" (click)="scrollTo('register')">
             Sign Up
           </a>
         </li>
       </ul>
       <div class="cabinet">
         <div class="cabinet__info">
-          <p class="cabinet__name">Superstar</p>
-          <p class="cabinet__email">Superstar@gmail.com</p>
+          <p class="cabinet__name">{{userData?.name}}</p>
+          <p class="cabinet__email">{{userData?.email}}</p>
         </div>
         <div class="cabinet__photo">
-          <img class="cabinet__img" src="/assets/img/user-superstar-2x.jpg" alt="user">
+          <img *ngIf="userData" class="cabinet__img" src="{{userData?.photo}}" alt="user">
         </div>
         <div class="cabinet__button">
           <a href="#">
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="menu-btn">
-        <a (click)="mobmenuOpen(true)">
+        <a (click)="mobmenuOpen('in')">
           <img src="/assets/img/icons/line-menu.svg" alt="menu">
         </a>
       </div>

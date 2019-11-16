@@ -9,6 +9,10 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  scrollTo(anchor: string): void {
+    document.getElementById(anchor).scrollIntoView({ behavior: 'smooth' });
+  }
+
   ngOnInit() {
   }
 

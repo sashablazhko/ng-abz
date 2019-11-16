@@ -1,5 +1,15 @@
 <div class="wrapper">
-  <app-header (onMobmenuOpen)="mobmenuOpen()"></app-header>
-  <app-mobmenu [isMobmenuOpen]="isMobmenuOpen"></app-mobmenu>
+  <app-header 
+    (onMobmenuOpen)="mobmenuToggle($event)"
+    [userData]="userData"
+    >
+  </app-header>
+  <div class="overlay" *ngIf="menuState === 'in'" (click)="mobmenuToggle('out')"></div>
+  <app-mobmenu 
+    (onMobmenuClose)="mobmenuToggle('out')"
+    [@slideInOut]="menuState"
+    [userData]="userData" 
+    >
+  </app-mobmenu>
   <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { IUser } from '@app/interfaces/user.interface';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   
-  @Output() onMobmenuOpen = new EventEmitter<boolean>();
+  @Output() onMobmenuOpen = new EventEmitter<string>();
+  @Input() userData: IUser;
 
   constructor() { }
 
-  mobmenuOpen() {
-    this.onMobmenuOpen.emit(true);
+  mobmenuOpen(open: string) {
+    this.onMobmenuOpen.emit(open);
+  }
+
+  scrollTo(anchor: string): void {
+    document.getElementById(anchor).scrollIntoView({ behavior: 'smooth' });
   }
 
   ngOnInit() {

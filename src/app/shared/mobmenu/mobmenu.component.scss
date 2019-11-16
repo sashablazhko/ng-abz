@@ -1,9 +1,16 @@
-.mobmenu {
-	width: 250px;
-	height: 100%;
-	position: fixed;
-  left: 0px;
+:host {
   background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  width: 250px;
+  z-index: 9999;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.mobmenu {
 
   &__cabinet {
     padding: 30px 15px;

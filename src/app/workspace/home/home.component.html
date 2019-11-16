@@ -6,7 +6,10 @@
         <p class="assignment__text">
           We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck!
         </p>
-        <button class="main-btn main-btn--orange">
+        <button 
+          class="main-btn main-btn--orange"
+          (click)="scrollTo('register')"
+        >
           Sign Up
         </button>
       </div>
@@ -14,7 +17,7 @@
   </div>
 </section>
 
-<section class="lets">
+<section class="lets" id="lets">
   <div class="container">
     <h2 class="title">
       Let's get acquainted
@@ -33,7 +36,7 @@
         <p class="lets__text usual-text">
           Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience on the web.
         </p>
-        <a href="#" class="lets__link">
+        <a class="lets__link" (click)="scrollTo('register')">
           Sign Up
         </a>
       </div>
@@ -41,7 +44,7 @@
   </div>
 </section>
 
-<section class="about">
+<section class="about" id="about">
   <div class="container">
     <h2 class="title title--width">
       About my relationships with web-development
@@ -84,7 +87,7 @@
   </div>
 </section>
 
-<section class="general">
+<section class="general" id="general">
   <div class="container">
     <h2 class="title title--white">
       General requirements for the test task

@@ -31,6 +31,7 @@
     width: 33.33%;
     padding: 0 10px 50px;
     display: flex;
+    overflow: hidden;
 
     @media ( max-width: 768px ) {
       display: block;
