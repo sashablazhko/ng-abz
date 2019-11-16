@@ -1,0 +1,278 @@
+.assignment-wrapper {
+  background-image: url('/assets/img/banner-bg/banner-bg-1204x723.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0 156px;
+
+  @media ( max-width: 680px ) {
+    padding: 70px 0; 
+  }
+}
+.assignment {
+  color: #fff;
+
+  &__info {
+    width: 47%;
+
+    @media ( max-width: 680px ) { 
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+
+    @media ( max-width: 680px ) { 
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 46px;
+
+    @media ( max-width: 680px ) { 
+      font-size: 16px;
+    }
+  }
+}
+
+.lets {
+  padding: 140px 0 60px;
+
+  @media ( max-width: 680px ) { 
+    padding: 70px 0 35px;
+  }
+
+  &__block {
+    display: flex;
+
+    @media ( max-width: 680px ) { 
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    flex-basis: 290px;
+    min-width: 290px;
+
+    img {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media ( max-width: 680px ) { 
+      margin: 25px 0;
+      padding: 0 35px;
+    }
+  }
+
+  &__content {
+    padding-left: 30px;
+
+    @media ( max-width: 680px ) { 
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Overpass', sans-serif;
+  }
+
+  &__text {
+    margin-bottom: 26px;
+    line-height: 22px;
+  }
+
+  &__link {
+    color: rgb(239, 108, 0);
+    font-size: 22px;
+    font-weight: 700;
+
+    &:hover {
+      color: rgb(252, 131, 31)
+    }
+  }
+}
+
+.about {
+  padding: 60px 0 140px;
+
+  @media ( max-width: 680px ) { 
+    padding: 35px 0 70px;
+  }
+
+  &__block {
+    display: flex;
+    padding-top: 50px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @media ( max-width: 768px ) {
+      flex-wrap: wrap;
+    }
+
+    @media ( max-width: 680px ) { 
+      padding-top: 30px;
+    }
+  }
+
+  &__item {
+    width: 33.33%;
+    margin: 0 15px;
+    
+    p {
+      line-height: 22px;
+    }
+
+    @media ( max-width: 768px ) {
+      width: 100%;
+      display: flex;
+      padding-bottom: 50px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      & .subtitle {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media ( max-width: 680px ) { 
+      display: block;
+      text-align: center;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__content {
+
+    @media ( max-width: 768px ) {
+      padding-left: 30px;
+    }
+
+    @media ( max-width: 680px ) { 
+      padding-left: 0;
+    }
+  }
+}
+
+
+.general {
+  padding: 140px 0;
+  background-image: url('/assets/img/bg-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  @media ( max-width: 680px ) { 
+     padding: 70px 0;
+  }
+
+  &__block {
+    display: flex;
+    padding-top: 50px;
+
+    @media ( max-width: 680px ) { 
+      flex-direction: column;
+      padding-top: 30px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    padding-right: 50px;
+    
+    @media ( max-width: 680px ) { 
+      order: 2;
+      padding: 30px 0 0;
+    }
+  }
+
+  &__text {
+    margin: 0 0 24px 0;
+    line-height: 22px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    flex-basis: 430px;
+    min-width: 430px;
+    
+    @media ( max-width: 768px ) {
+      flex-basis: 340px;
+      min-width: 340px; 
+    }
+    
+    @media ( max-width: 680px ) { 
+      order: 1;
+      flex-basis: auto;
+      min-width: auto;
+      padding: 0 35px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 286px;
+  display: block;
+  z-index: 2;
+  
+  &__block {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 25px;
+  }
+
+  &__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    padding-right: 30px;
+  }
+
+  &__footer {
+    text-align: right;
+  }
+
+  &__btn {
+    color: rgb(239, 108, 0);
+    font-size: 20px;
+    font-weight: 700;
+
+    &:hover {
+      color: rgb(252, 131, 31)
+    } 
+  }
+}

@@ -1,0 +1,37 @@
+<!-- <div class="overlay overlay__mobmenu" style="display: none;"> -->
+<div class="overlay overlay__mobmenu" [ngClass]="{'overlay__mobmenu--active': isMobmenuOpen}">
+  <div class="mobmenu">
+    <code><pre>{{isMobmenuOpen}}</pre></code>
+    <div class="mobmenu__cabinet">
+      <div class="mobmenu__photo">
+        <img src="/assets/img/user-adolph-2x.png" alt="user">
+      </div>
+      <div class="mobmenu__name">
+        Superstar
+      </div>
+      <div class="mobmenu__email">
+        Superstar@gmail.com
+      </div>
+    </div>
+    <ul class="mobmenu__nav">
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">About me</a>
+      </li>
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">Relationships</a>
+      </li>
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">Requirements</a>
+      </li>
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">Users</a>
+      </li>
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">Sign Up</a>
+      </li>
+      <li class="mobmenu__item">
+        <a class="mobmenu__link" href="#">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+</div>

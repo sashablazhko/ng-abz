@@ -1,0 +1,107 @@
+.users {
+  padding: 140px 0 75px;
+
+  @media ( max-width: 680px ) { 
+    padding: 70px 0 35px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 55px;
+
+    @media ( max-width: 680px ) { 
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding: 0;
+
+    @media ( max-width: 680px ) { 
+      margin: 0;
+    }
+  }
+
+  &__item {
+    width: 33.33%;
+    padding: 0 10px 50px;
+    display: flex;
+
+    @media ( max-width: 768px ) {
+      display: block;
+      text-align: center;
+      padding: 0 10px 40px;
+    }
+
+    @media ( max-width: 680px ) { 
+      width: 100%;
+      padding: 0 0 30px;
+    }
+  }
+
+  &__img {
+    flex-basis: 70px;
+    min-width: 70px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    @media ( max-width: 768px ) {
+      
+      img {
+        width: 72px;
+      }
+    }
+  }
+
+  &__info {
+    padding-left: 10px;
+    width: calc(100% - 70px);
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(76, 75, 75);
+
+    @media ( max-width: 768px ) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &__name {
+    font-family: 'Overpass';
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+
+    @media ( max-width: 768px ) {
+      margin: 10px 0 15px; 
+    }
+  }
+
+  &__position {
+    margin: 0 0 5px;
+  }
+
+  &__email {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 5px;
+  }
+
+  &__phone {
+    margin: 0 0 5px;
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}

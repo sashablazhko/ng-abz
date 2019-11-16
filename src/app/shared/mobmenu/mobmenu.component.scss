@@ -1,0 +1,46 @@
+.mobmenu {
+	width: 250px;
+	height: 100%;
+	position: fixed;
+  left: 0px;
+  background-color: #fff;
+
+  &__cabinet {
+    padding: 30px 15px;
+    border-bottom: 1px solid rgb(211, 210, 210);;
+  }
+
+  &__photo {
+    height: 68px;
+    margin-bottom: 15px;
+
+    img {
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__email {
+    font-size: 14px;
+    color: rgb(141, 140, 140);
+  }
+
+  &__nav {
+    padding: 0 15px;
+  }
+  
+  &__link {
+    display: block;
+    padding: 15px 0;
+    color: #000;
+
+    &:hover {
+      color: rgb(239, 108, 0);
+    }
+  }
+}

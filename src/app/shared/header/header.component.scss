@@ -1,0 +1,103 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+
+  .logo {
+
+    img {
+      height: 24px;
+    }
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: inline;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: none;
+      }
+    }
+
+    &__link {
+      color: #000;
+
+      &:hover {
+        color: rgb(239, 108, 0);
+      }
+    }
+
+    @media ( max-width: 919px ) {
+      display: none;
+    }
+  }
+
+  .cabinet {
+    display: flex;
+    height: 42px;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__name,
+    &__email {
+      margin: 0;
+      text-align: right;
+    }
+    &__name {
+      font-size: 14px;
+    }
+    &__email {
+      font-size: 12px;
+      color: rgb(141, 140, 140);
+    }
+
+    &__photo {
+      height: 42px;
+      width: 42px;
+      margin: 0 12px;
+    }
+    
+    &__img {
+      height: 100%;
+      border-radius: 50%;
+     }
+
+    &__button {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    @media ( max-width: 919px ) {
+      display: none;
+    }
+  }
+}
+
+.menu-btn {
+  @media ( min-width: 920px ) {
+    display: none;
+  } 
+
+  a {
+    display: block;
+  }
+}

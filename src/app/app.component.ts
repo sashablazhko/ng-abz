@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-abz';
+
+  isMobmenuOpen = false;
+
+  mobmenuOpen() {
+    this.isMobmenuOpen = true;
+  }
 }
