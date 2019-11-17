@@ -1,11 +1,18 @@
 .assignment-wrapper {
-  background-image: url('/assets/img/banner-bg/banner-bg-1204x723.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 140px 0 156px;
-
-  @media ( max-width: 680px ) {
+  
+  @media ( min-width: 681px ) { 
+    background-image: url('/assets/img/banner-bg/banner-bg-1204x723.jpg');
+  }
+  @media ( max-width: 680px ) and ( min-width: 421px ) {
+    background-image: url('/assets/img/banner-bg/banner-bg-768x622.jpg');
+    padding: 70px 0; 
+  }
+  @media ( max-width: 420px ) {
+    background-image: url('/assets/img/banner-bg/banner-bg-320x393.jpg');
     padding: 70px 0; 
   }
 }
@@ -234,45 +241,5 @@
     img {
       width: 100%;
     }
-  }
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 286px;
-  display: block;
-  z-index: 2;
-  
-  &__block {
-    border-radius: 4px;
-    background-color: #fff;
-    padding: 25px;
-  }
-
-  &__title {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-
-  &__text {
-    margin-bottom: 40px;
-    padding-right: 30px;
-  }
-
-  &__footer {
-    text-align: right;
-  }
-
-  &__btn {
-    color: rgb(239, 108, 0);
-    font-size: 20px;
-    font-weight: 700;
-
-    &:hover {
-      color: rgb(252, 131, 31)
-    } 
   }
 }

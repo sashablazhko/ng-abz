@@ -9,13 +9,13 @@ import { IUserResponse, IUsersResponse } from '@app/interfaces/responses.interfa
  providedIn: 'root'
 })
 export class UserService {
- private apiUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1';
+  private apiUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1';
 
- constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
- userData$ = new BehaviorSubject<IUser>(null);
- usersData$ = new BehaviorSubject<IUser[]>([]);
- totalUsers$ = new BehaviorSubject<number>(null); 
+  userData$ = new BehaviorSubject<IUser>(null);
+  usersData$ = new BehaviorSubject<IUser[]>([]);
+  totalUsers$ = new BehaviorSubject<number>(null); 
 
   fetchUser(): void {
     this.http.get<IUserResponse>(`${this.apiUrl}/users/1`)

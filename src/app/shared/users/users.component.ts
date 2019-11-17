@@ -30,7 +30,6 @@ export class UsersComponent implements OnInit {
         (users: IUser[]) => {
           if (users) {
             this.usersData = users;
-            console.log('', );
           }
         },
         err => {

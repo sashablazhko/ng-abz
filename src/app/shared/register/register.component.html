@@ -23,37 +23,40 @@
           <p *ngIf="email.invalid && email.touched" class="register__form__error">Error</p>
         </div>
         <div class="register__form__item register__form__item--three">
-          <input formControlName="phone" class="register__form__input" name="phone" type="text">
+          <input mask=" (000) 000 00 00" prefix="+38" [showMaskTyped]="true"  formControlName="phone" class="register__form__input" name="phone" type="text">
           <label class="register__form__label">Phone</label>           
           <p *ngIf="phone.invalid && phone.touched" class="register__form__error">Error</p>
         </div>
       </div>
       <div class="register__form__row">
         <div class="register__form__item register__form__item--two">
-          
-            <ng-select 
-              class="register__form__input"
-              formControlName="position"
-              [searchable]="false"
-              [clearable]="false"
-              [placeholder]="'Select'"
-              
-            >
-              <!-- [class.invalid-method]="questions.errors?.required"<ng-option *ngFor="let answer of questionsAndAnswers[0].answersList; let i = index" [value]="i">{{answer}}</ng-option> -->
-              <ng-option>1</ng-option>
-              <ng-option>2</ng-option>
-              <ng-option>3</ng-option>
-            </ng-select>
-
+          <ng-select 
+            class="register__form__select"
+            formControlName="position"
+            [searchable]="true"
+            [clearable]="false"
+            placeholder="Select your position"
+            [items]="positionsData"
+            bindLabel="name"
+            bindValue="id"
+          >
+          </ng-select>
           <p *ngIf="position.invalid && position.touched" class="register__form__error">Error</p>
         </div>
         <div class="register__form__item register__form__item--two">
-          <input formControlName="file" class="register__form__input register__form__input--file" name="file" type="file">
-          <div class="register__form__file-fake">
+          <input
+            (change)="fileSelected($event)"
+            formControlName="file" 
+            class="register__form__input register__form__input--file" 
+            name="file" 
+            type="file"
+            #fileInput
+          >
+          <div class="register__form__file-fake" (click)="fileInput.click()">
             <div class="register__form__file-fake__text">
-              Upload your photo
+              {{fileFakePlaceholder}}
             </div>
-            <button class="register__form__file-fake__btn" type="submit">
+            <button class="register__form__file-fake__btn" type="button">
               <span class="register__form__file-fake__btn__upload">Upload</span>
               <img class="register__form__file-fake__btn__img" src="/assets/img/icons/upload.svg" alt="upload">
             </button>
@@ -65,8 +68,8 @@
         </div>
       </div>
       <div class="register__form__btn">
-          <button class="main-btn main-btn--orange main-btn--disable">
-            Sign Up
+          <button [disabled]="submitting" class="main-btn main-btn--orange">
+            {{submitting ? 'Loading...' : 'Sign Up'}}
           </button> 
       </div>
     </form>  

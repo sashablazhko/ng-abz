@@ -1,4 +1,5 @@
 import { IUser } from './user.interface';
+import { IPosition } from './position.interface';
 
 export interface IUserResponse {
   success: boolean;
@@ -13,4 +14,9 @@ export interface IUsersResponse {
   total_pages: number;
   total_users: number
   users: IUser[];
+}
+
+export interface IPositionsResponse {
+  positions: IPosition[];
+  success: boolean;
 }

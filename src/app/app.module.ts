@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './workspace/home/home.module';
 import { HeaderModule } from './shared/header/header.module';
 import { MobmenuModule } from './shared/mobmenu/mobmenu.module';
+import { PopupModule } from './shared/popup/popup.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MobmenuModule } from './shared/mobmenu/mobmenu.module';
     BrowserAnimationsModule,
     HomeModule,
     HeaderModule,
-    MobmenuModule
+    MobmenuModule,
+    PopupModule
   ],
   providers: [
     {

@@ -69,7 +69,7 @@ a {
     }
   }
 
-  &--disable {
+  &:disabled {
     border: 2px solid rgb(215, 215, 215);
     background-color: rgb(215, 215, 215);
     color: rgb(141, 140, 140);

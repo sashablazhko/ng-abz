@@ -86,6 +86,79 @@
       }
     } 
 
+    &__select {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      color: rgb(141, 140, 140);
+      border: 1px solid rgb(183, 183, 183);
+      border-radius: 4px;
+
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+    }
+
+    &::ng-deep .ng-select {
+
+      &.ng-touched.ng-valid {
+        .ng-placeholder{
+          display: none;
+        }
+      }
+
+      & .ng-select-container {
+        height: 100%;
+
+        & .ng-value-container {
+          align-items: center;
+          padding: 15px;
+        }
+
+        & .ng-input input {
+          padding: 0 15px;
+        }
+
+        .ng-arrow-wrapper {
+          display: flex;
+          align-items: center;
+        }
+
+        & .ng-arrow {
+          background: url(/assets/img/icons/caret-down.svg) 50% 50%/10px 6px no-repeat;
+          width: 40px;
+          height: 8px;
+        }
+      }
+
+      & .ng-dropdown-panel {
+        width: calc(100% + 2px);
+        right: -1px;
+        top: 53px;
+
+        & .ng-option {
+          height: 56px;
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          border-right: 1px solid rgb(183, 183, 183);
+          border-left: 1px solid rgb(183, 183, 183);
+
+          &:hover {
+            background-color: #fee6d2;
+          }
+          
+          &:last-child {
+            border-bottom: 1px solid rgb(183, 183, 183);
+          }
+          
+          span {
+            padding: 0 15px;
+          }
+        }
+      }
+    }
+
     &__label {
       position: absolute;
       top: -6px;
@@ -125,6 +198,7 @@
         padding: 0 30px;
         font-size: 20px;
         font-weight: 700;
+        outline: none;
         cursor: pointer;
 
         &:hover {

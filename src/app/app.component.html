@@ -4,12 +4,19 @@
     [userData]="userData"
     >
   </app-header>
-  <div class="overlay" *ngIf="menuState === 'in'" (click)="mobmenuToggle('out')"></div>
+  <div 
+    class="overlay" 
+    *ngIf="menuState === 'in'" 
+    (click)="mobmenuToggle('out')"
+    >
+  </div>
   <app-mobmenu 
     (onMobmenuClose)="mobmenuToggle('out')"
     [@slideInOut]="menuState"
     [userData]="userData" 
     >
   </app-mobmenu>
+  <app-popup>
+  </app-popup>
   <router-outlet></router-outlet>
 </div>

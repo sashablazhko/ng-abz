@@ -46,11 +46,13 @@
   }
 
   &__img {
-    flex-basis: 70px;
-    min-width: 70px;
+    flex-basis: 72px;
+    min-width: 72px;
+    height: 72px;
 
     img {
       width: 100%;
+      height: 100%;
       border-radius: 50%;
     }
 

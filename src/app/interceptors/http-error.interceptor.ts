@@ -16,7 +16,9 @@ import {
         retry(1),
         catchError((error: HttpErrorResponse) => {
           let errorMessage = '';
-          if (error.error instanceof ErrorEvent) {
+          if (error.error && error.error.message) {
+            errorMessage = `Error: ${error.error.message}`;
+          } else if (error.error instanceof ErrorEvent) {
             errorMessage = `Error: ${error.error.message}`;
           } else {
             errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
