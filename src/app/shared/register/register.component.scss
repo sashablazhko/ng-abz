@@ -58,17 +58,7 @@
         }
       }
     }
-    
-    &__label {
-      position: absolute;
-      top: -6px;
-      left: 15px;
-      color: rgb(141, 140, 140);
-      font-size: 12px;
-      padding: 0 4px;
-      background-color: #fff;
-    }
-    
+       
     &__input {
       height: 100%;
       width: 100%;
@@ -81,6 +71,29 @@
       &--file {
         display: none;
       }
+
+      &.ng-invalid.ng-touched {
+        border: 1px solid red;
+
+        & ~ label {
+          color: red;
+        }
+        & ~ .register__form__file-fake .register__form__file-fake__text {
+          border-left: 1px solid red;
+          border-top: 1px solid red;
+          border-bottom: 1px solid red;
+        }
+      }
+    } 
+
+    &__label {
+      position: absolute;
+      top: -6px;
+      left: 15px;
+      color: rgb(141, 140, 140);
+      font-size: 12px;
+      padding: 0 4px;
+      background-color: #fff;
     }
     
     &__file-fake {

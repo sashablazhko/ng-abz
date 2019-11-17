@@ -6,42 +6,62 @@
     <h3 class="register__subtitle">
       Attention! Sorting users by registration date
     </h3> 
-    <form class="register__form">
+    <form 
+      class="register__form" 
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit($event)"
+    >
       <div class="register__form__row">
         <div class="register__form__item register__form__item--three">
+          <input formControlName="name" class="register__form__input" name="name" type="text" placeholder="Your name">
           <label class="register__form__label">Name</label>            
-          <input class="register__form__input" name="name" type="text" placeholder="Your name">
-          <p class="register__form__error">Error</p>
+          <p *ngIf="name.invalid && name.touched" class="register__form__error">Error</p>
         </div>
         <div class="register__form__item register__form__item--three">
-          <label class="register__form__label">Email</label>            
-          <input class="register__form__input" name="email" type="text" placeholder="Your email">
-          <p class="register__form__error">Error</p>
+          <input formControlName="email" class="register__form__input" name="email" type="text" placeholder="Your email">
+          <label class="register__form__label">Email</label>           
+          <p *ngIf="email.invalid && email.touched" class="register__form__error">Error</p>
         </div>
         <div class="register__form__item register__form__item--three">
-          <label class="register__form__label">Phone</label>            
-          <input class="register__form__input" name="phone" type="text">
-          <p class="register__form__error">Error</p>
+          <input formControlName="phone" class="register__form__input" name="phone" type="text">
+          <label class="register__form__label">Phone</label>           
+          <p *ngIf="phone.invalid && phone.touched" class="register__form__error">Error</p>
         </div>
       </div>
       <div class="register__form__row">
         <div class="register__form__item register__form__item--two">
-          <input class="register__form__input" name="name" type="text" placeholder="Your name">
-          <p class="register__form__error">Error</p>
+          
+            <ng-select 
+              class="register__form__input"
+              formControlName="position"
+              [searchable]="false"
+              [clearable]="false"
+              [placeholder]="'Select'"
+              
+            >
+              <!-- [class.invalid-method]="questions.errors?.required"<ng-option *ngFor="let answer of questionsAndAnswers[0].answersList; let i = index" [value]="i">{{answer}}</ng-option> -->
+              <ng-option>1</ng-option>
+              <ng-option>2</ng-option>
+              <ng-option>3</ng-option>
+            </ng-select>
+
+          <p *ngIf="position.invalid && position.touched" class="register__form__error">Error</p>
         </div>
         <div class="register__form__item register__form__item--two">
-          <input class="register__form__input register__form__input--file" name="file" type="file">
+          <input formControlName="file" class="register__form__input register__form__input--file" name="file" type="file">
           <div class="register__form__file-fake">
             <div class="register__form__file-fake__text">
               Upload your photo
             </div>
-            <button class="register__form__file-fake__btn">
+            <button class="register__form__file-fake__btn" type="submit">
               <span class="register__form__file-fake__btn__upload">Upload</span>
               <img class="register__form__file-fake__btn__img" src="/assets/img/icons/upload.svg" alt="upload">
             </button>
           </div>
-          <p class="register__form__info">File format jpg  up to 5 MB, the minimum size of 70x70px</p>
-          <p class="register__form__error">Error</p>
+          <p *ngIf="file.invalid && file.touched; else fileInfo" class="register__form__error">Error</p>
+          <ng-template #fileInfo>
+            <p class="register__form__info">File format jpg  up to 5 MB, the minimum size of 70x70px</p>
+          </ng-template>
         </div>
       </div>
       <div class="register__form__btn">
